@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "CapitalOne Shopping Loader",
+  "version": "1.0.0",
+  "description": "Load every offer from the CapitalOne Shopping home feed, then search, filter and sort them.",
+    "icons": {
+    "16": "icon/16.png",
+    "48": "icon/48.png",
+    "128": "icon/128.png"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://capitaloneshopping.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://capitaloneshopping.com/*"
+      ],
+      "js": [
+        "core.js",
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
